@@ -1,0 +1,259 @@
+/** Not allowed to change this initial CSS code **/
+body {
+  background: url(../img/12_col.gif) center top repeat-y;
+  background-size: 90%;
+}
+/*************************************************/
+
+/*General setting section starts*/
+.containers {
+  font-family: sans-serif;
+  font-size: 1em;
+  color: black;
+  margin: 12px auto;
+  width: 90%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 2%;
+  row-gap: 1em;
+}
+
+.container {
+  box-sizing: border-box;
+  border: 1px solid black;
+  min-height: 150px;
+}
+
+/*Detailed setting sections start*/
+.header {
+  grid-column: 1 / 13;
+  position: sticky;
+}
+
+.header,
+.content,
+.sidebar {
+  background-color: rgb(212, 237, 212);
+  display: flex;
+}
+
+.footer {
+  grid-column: 1 / 13;
+  position: sticky;
+}
+
+.header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header nav {
+  margin: auto 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-button,
+#header-button {
+  box-sizing: border;
+  border: 1px solid gray;
+  width: 60px;
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  background-color: white;
+}
+
+#header-button {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.content {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  align-content: space-around;
+  row-gap: 1em;
+  column-gap: 0.5em;
+  padding: 0.3em;
+}
+
+.content-section {
+  width: 31.6%;
+  margin: 0.1em;
+}
+
+.sidebar {
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  row-gap: 10px;
+  padding-top: 15px;
+}
+
+.siderbar-button {
+  box-sizing: border;
+  border: 1px solid gray;
+  width: 90%;
+  height: 20px;
+  font-size: 15px;
+  text-align: center;
+  background-color: white;
+}
+
+/* Media queries for responsiveness section starts*/
+/* Settings for the screen larger than 1200px (the wide desktop screen) */
+@media screen and (min-width: 1200px) {
+  .box1 {
+    grid-column: 1 / 3;
+  }
+
+  .box2 {
+    grid-column: 3 / 11;
+  }
+
+  .box3 {
+    grid-column: 11 / 13;
+  }
+
+  .content {
+    grid-column: 1 / 10;
+  }
+
+  .sidebar {
+    grid-column: 10 / 13;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2%;
+    justify-content: space-around;
+    padding: 0.4em;
+  }
+}
+
+/* Settings for the screen between 960px and 1200px (the smaller desktop screen) */
+@media (min-width: 960px) and (max-width: 1200px) {
+  .content-section {
+    width: 48%;
+    margin: 0.1em;
+  }
+  .box1 {
+    grid-column: 1 / 4;
+  }
+
+  .box2 {
+    grid-column: 4 / 10;
+  }
+
+  .box3 {
+    grid-column: 10 / 13;
+  }
+
+  .content {
+    grid-column: 1 / 9;
+  }
+
+  .sidebar {
+    grid-column: 9 / 13;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2%;
+    justify-content: space-around;
+    padding: 0.4em;
+  }
+}
+/* Settings for the screen between 768px and 960px (tablets such as Ipad) */
+@media (min-width: 768px) and (max-width: 960px) {
+  .content-section {
+    width: 97%;
+    margin: 0.4em;
+  }
+
+  .box1 {
+    grid-column: 1 / 5;
+  }
+
+  .box2 {
+    grid-column: 5 / 9;
+  }
+
+  .box3 {
+    grid-column: 9 / 13;
+  }
+
+  .content {
+    grid-column: 1 / 7;
+  }
+
+  .sidebar {
+    grid-column: 7 / 13;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 2%;
+    row-gap: 1em;
+    justify-content: space-around;
+    padding: 0.4em;
+  }
+}
+
+/* Settings for the screen smaller than 768px (mobile phones) */
+@media (max-width: 768px) {
+  .header {
+    align-items: center;
+    justify-content: center;
+  }
+  .header nav {
+    margin: 2px;
+    gap: 4px;
+  }
+
+  .header-button,
+  #header-button {
+    width: 40px;
+    height: 15px;
+    font-size: 10px;
+  }
+
+  #header-button {
+    margin-left: 0;
+    margin-right: 2px;
+  }
+  .content-section {
+    width: 97%;
+    margin: 0.4em;
+  }
+
+  .sidebar {
+    padding-bottom: 80px;
+  }
+
+  .header,
+  .box1,
+  .box2,
+  .box3,
+  .content,
+  .sidebar,
+  .footer {
+    grid-column: 1 / 13;
+  }
+
+  .footer {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 0.7em;
+    justify-items: space-around;
+    padding: 0.5em 0.2em 0.5em;
+  }
+}
